@@ -1,0 +1,30 @@
+{
+  "name": "forkio-step",
+  "version": "1.0.0",
+  "description": "Step Project in pairs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ylubinets/Forkio-StepProject.git"
+  },
+  "author": "Yaroslav Lubinets, Elizaveta Rudaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ylubinets/Forkio-StepProject/issues"
+  },
+  "homepage": "https://github.com/ylubinets/Forkio-StepProject#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
