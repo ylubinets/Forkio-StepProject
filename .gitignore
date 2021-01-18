@@ -2,5 +2,4 @@
 *.iml
 *.xml
 node_modules/**/*
-dist/**/*
 package-lock.json
