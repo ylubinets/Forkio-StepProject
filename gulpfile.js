@@ -1,71 +1,92 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
-const imgMin = require('gulp-imagemin');
-const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
-const browserSync = require('browser-sync');
-const cleaner = require('gulp-clean');
-gulp.task('htmlBuild', function () {
-    return gulp.src('src/*.html')
-        .pipe(gulp.dest('dist/'))
-        .pipe(browserSync.stream())
-});
-gulp.task('cssBuild', function () {
-    return gulp.src('src/scss/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer('last 8 versions'))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(concat('styles.min.css'))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.stream())
-});
-gulp.task('jsBuild', function () {
-    return gulp.src('src/js/**/*.js')
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(concat('scripts.min.js'))
-        .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.stream())
-});
-gulp.task('libs:js', function () {
-    return gulp.src([
-        './node_modules/jquery/dist/jquery.js',
-    ])
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(concat('libs.min.js'))
-        .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.stream())
-});
-gulp.task('image:minify', function () {
-    return gulp.src('src/img/**/*.*')
-        .pipe(imgMin())
-        .pipe(gulp.dest('dist/img-min'))
-        .pipe(browserSync.stream())
-});
-gulp.task('build', gulp.series(
-    'htmlBuild',
-    'cssBuild',
-    'jsBuild',
-    'image:minify',
-    'libs:js',
-));
-gulp.task('dev', function () {
+let sourceFolder = "./dist";
+let devFolder = "./src";
+
+const path = {
+    dist: {
+        css: sourceFolder + "/css/",
+        js: sourceFolder + "/js/",
+        img: sourceFolder + "/img/",
+    },
+
+    src: {
+        scss: devFolder + "/scss/style.scss",
+        js: devFolder + "/js/*.js",
+        img: devFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+    },
+    watchers: {
+        scss: devFolder + "/scss/**/*.scss",
+    },
+    clean: sourceFolder,
+};
+
+const gulp = require("gulp"),
+    clean = require("gulp-clean"),
+    sass = require("gulp-sass"),
+    browserSync = require("browser-sync").create(),
+    cleanCSS = require("gulp-clean-css"),
+    autoprefixer = require("gulp-autoprefixer"),
+    uglify = require("gulp-uglify"),
+    concat = require("gulp-concat"),
+    imagemin = require("gulp-imagemin");
+
+const { src, dest, watch, parallel, series } = require("gulp");
+
+const watcher = () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
-        }
+            baseDir: "./",
+        },
+        port: 5000,
+        notify: false,
     });
-    return gulp.watch(
-        'src/**/*.*',
-        gulp.series(
-            'htmlBuild',
-            'cssBuild',
-            'jsBuild',
+
+    watch(path.watchers.scss, style).on("change", browserSync.reload);
+    watch(path.src.js, scripts).on("change", browserSync.reload);
+    watch(path.src.img, img).on("change", browserSync.reload);
+    watch("./*.html").on("change", browserSync.reload);
+};
+
+const cleanDist = () =>
+    src(path.clean, { allowEmpty: true }, { read: false }).pipe(clean());
+
+const style = () =>
+    src(path.src.scss)
+        .pipe(concat("styles.min.css"))
+        .pipe(sass().on("error", sass.logError))
+        .pipe(
+            autoprefixer({
+                overrideBrowserslist: ["last 3 versions"],
+            })
         )
-    )
-});
+        .pipe(cleanCSS({ compatibility: "ie8" }))
+        .pipe(dest(path.dist.css))
+        .pipe(browserSync.stream());
+
+const scripts = () =>
+    src(["src/js/script.js"])
+        .pipe(concat("scripts.min.js"))
+        .pipe(uglify())
+        .pipe(dest(path.dist.js))
+        .pipe(browserSync.stream());
+
+const img = () =>
+    src(path.src.img)
+        .pipe(
+            imagemin({
+                progressive: true,
+                svgoPlugins: [{ removeViewBox: false }],
+                interlaced: true,
+                optimizationLevel: 3,
+            })
+        )
+        .pipe(dest(path.dist.img))
+        .pipe(browserSync.stream());
+
+exports.cleanDist = cleanDist;
+exports.style = style;
+exports.scripts = scripts;
+exports.img = img;
+exports.watcher = watcher;
+exports.build = series(cleanDist, parallel(style, scripts, img));
+exports.dev = watcher;
+exports.clean = cleanDist;
