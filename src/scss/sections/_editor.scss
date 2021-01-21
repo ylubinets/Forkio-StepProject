@@ -1,0 +1,115 @@
+.editor-section{
+  padding: 100px 0 70px 0;
+  background-color: #ffffff;
+}
+
+.editor-section__container{
+  @include flex(flex, wrap ,center,center,);
+  flex-direction: column;
+
+  .editor__title{
+    @include editor-title;
+    margin: 0 0 35px 0;
+    font-size: 54px;
+    line-height: 54px;
+  }
+  .editor__subtitle{
+    @include editor-subtitle;
+    font-size: 21px;
+    line-height: 32px;
+    margin: 0 0 13px 0;
+  }
+
+  .editor {
+
+    &__list {
+      @include flex(flex, wrap, center, center);
+
+    }
+  }
+
+  .editors {
+    &__btn {
+      color: #c9d1d9;
+      font-size: 12px;
+      @include flex(flex, nowrap, center, stretch);
+      line-height: 20px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    &__icon {
+      @include flex(flex, nowrap, center, center);
+      border: 1px solid rgba(27,31,35,0.15);
+      background-color: #FAFBFC;
+      border-radius: 6px 0 0 6px;
+      padding: 5px 12px;
+      fill: #24292e;
+      color: #24292e;
+      text-decoration: none;
+      span {
+        padding-left: 2px;
+        font-weight: 600;
+      }
+      &:hover {
+        background-color: #F3F4F6;
+      }
+    }
+    &__count {
+      @include flex(flex, nowrap, center, center);
+      padding: 5px 12px;
+      border-radius: 0 6px 6px 0;
+      background-color: #fff;
+      border-width: 1px 1px 1px 0;
+      border-style: solid;
+      border-color: rgba(27,31,35,0.15);
+      color: #24292e;
+      text-decoration: none;
+
+      &:hover {
+        color: #0366d6;
+      }
+
+    }
+    >li:last-child, >li:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media  (max-width: 992px){
+  .editor-section {
+    padding: 120px 0 98px 0;
+    background-color: #ffffff;
+
+    .editor__title {
+      font-size: 42px;
+      line-height: 42px;
+    }
+
+    .editor__subtitle {
+      margin: 0 0 24px 0;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .editor-section {
+    padding: 70px 0 88px 0;
+
+    .editor__title {
+      font-size: 26px;
+      line-height: 28px;
+      margin: 0 0 27px 0;
+    }
+
+    .editor__subtitle {
+      margin: 0 0 36px 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+
+
+
+

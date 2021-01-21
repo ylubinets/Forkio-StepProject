@@ -71,14 +71,12 @@
     width: 164px;
 
     &_img {
+        background-image: url(../img/logo/logo.png);
       width: 43px ;
       height: 41px;
-      background: url(../../img/logo/logo.svg) no-repeat center;
-      background-size: cover;
       transition: 300ms ease-in-out;
       &:hover {
-          background: url(../../img/logo/logo-hover.svg)no-repeat center;
-          background-size:cover;
+          background-image: url(../img/logo/logo-hover.png);
       }
     }
 
@@ -171,7 +169,7 @@
 
         &_link{
             display: inline-block;
-            padding-top: 11pxpx;
+            padding-top: 11px;
             padding-left: 36px;
             color:$light;
             font-size: 27px;
@@ -243,7 +241,7 @@
 // HERO
 
 .hero {
-    background:url(../../img/header/background.png) no-repeat center;
+    background:url(../img/header/background.png) no-repeat center;
     background-size:cover;
     padding-top: 68px;
     padding-bottom: 487px;

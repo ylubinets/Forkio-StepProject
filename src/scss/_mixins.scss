@@ -17,3 +17,34 @@
   margin: 0 auto;
   padding: 0 10px;    
  }
+@mixin flex($display, $wrap, $justify, $align) {
+  display: $display;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin editor-title{
+  font-family:"Montserrat", sans-serif ;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #635C73;
+  text-align: center;
+  text-transform: uppercase;
+}
+@mixin editor-subtitle{
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0;
+  text-align: center;
+  color: #323232;
+}
+@mixin editor-button-text-style{
+  text-decoration: none;
+  display: inline-block;
+  color: #24292e;
+  padding: 3px 12px;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif ;
+  cursor: pointer;
+}
+
