@@ -1,0 +1,357 @@
+//Navbar
+
+
+.container {
+    @include container_1200;
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 29.5px 0;
+
+    &_container{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        flex-wrap: wrap;
+
+    }
+
+    &_list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_item {
+        margin-right: 4vw;
+    }
+
+    &_link {
+        font-size: 16px;
+        color:$main_purple;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 300ms ease-in-out;
+
+        &:hover{
+            color:$light;
+        }
+    }
+
+    &_btn {
+        background:$main_purple;
+        font-weight: 700;
+        padding: 10px 33px;
+        border: 1px solid $main_purple;
+
+        &:hover{
+            background:$light;
+            border: 1px solid $main_purple;
+            color: $main_purple;
+        }
+    }
+}
+
+
+//Logo 
+
+.logo_wrapper{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    width: 164px;
+
+    &_img {
+      width: 43px ;
+      height: 41px;
+      background: url(../../img/logo/logo.svg) no-repeat center;
+      background-size: cover;
+      transition: 300ms ease-in-out;
+      &:hover {
+          background: url(../../img/logo/logo-hover.svg)no-repeat center;
+          background-size:cover;
+      }
+    }
+
+    &_text {
+        @include Montserrat;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $main_purple;
+        transition: 300ms ease-in-out;
+
+        &:hover {
+            color: $light;
+        }
+    }
+}
+
+
+// Burger menu
+
+.burger_toggle {
+    margin-top: 8px;
+}
+
+.burger_icon{
+    height: 3px;
+    width: 26px;
+    border-radius:5px;
+    margin-bottom: 7px;
+   background-color : $light;
+}
+
+.line1{
+    width: 20px;
+    position: relative;
+    right: -2px;
+}
+
+
+
+//Media
+
+@media only screen and (max-width: 992px) and (min-width: 481px){
+    .navbar {
+        padding: 22px 0 55px 0;
+
+        &_list {
+             position: absolute;
+             right: -30px;
+             top: 82px;
+             left: 0;
+        }
+        &_item{
+            margin-right: 7vw;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .container {
+        max-width: 300px;
+    }
+
+    .logo {
+        width: 43px;
+        height: 41px;
+        &_text {
+            display: none;
+        }
+    }
+
+    .navbar{
+        position: relative;
+
+        &_container{
+            width: 66vw;
+        }
+
+        &_list{
+            display: block;
+            position: absolute;
+            top:102px;
+            right: 2px;
+
+            &_active{
+                display: none;
+            }
+        }
+
+        &_link{
+            display: inline-block;
+            padding-top: 28px;
+            padding-left: 36px;
+            color:$light;
+            font-size: 27px;
+            font-weight: 300;
+            border-bottom: 1px solid gray;
+            width: 254px;
+            height: 55px;
+            background-color:black;
+        
+            &:hover {
+                color:$main_purple;
+            }
+        }
+
+        &_item{
+            position: relative;
+        &:hover{
+            color:$main_purple;
+        }
+
+        &:hover::before,
+        &:active::before{
+             content: '';
+             display: block;
+             top: 14px;
+             position: absolute;
+             height: 54px;
+             width: 8px;
+             background-color: $main_purple;
+        }
+        
+        }
+        
+        
+    }
+
+    .burger_toggle{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+       
+        
+
+    
+        &.open .line1{
+            transform: rotate(45deg) translate(4px , 9px);
+            width: 26px;
+            transition: 300ms ease-in-out;
+        }
+
+        &.open .line3 {
+            transform: rotate(-45deg) translate(7px, -9px);
+            transition: 300ms ease-in-out;
+
+        }  
+        
+        &.open .line2{
+            transform: translateX(-50px);
+            background:transparent;
+            box-sizing: none;
+
+        }
+    }
+}
+
+
+
+// HERO
+
+.hero {
+    background:url(../../img/header/background.png) no-repeat center;
+    background-size:cover;
+    padding-top: 68px;
+    padding-bottom: 487px;
+
+    &_slogan{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+
+        &_title{
+            text-align: center;
+            @include Montserrat;
+            font-size: 82px;
+            font-weight: 700;
+            color:$light;
+        }
+        &_subtitle{
+            @include Lato;
+            color:$main_purple;
+            padding: 19px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        &_version {
+            @include Montserrat;
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            color:$light_grey;
+        }
+    }
+}
+
+.hero_btn{
+    padding-bottom: 70px;
+}
+
+.btn_section{
+    max-width: 913px;
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn_download{
+    position: relative;
+    background-color:$main_purple;
+    border: 1px solid $main_purple;
+    bottom: 36px;
+    padding: 23px 63px;
+    font-size: 21px; 
+    font-weight: 700;
+    color:$light;
+    border-radius: 50px;
+    transition: 300ms ease-in-out;
+
+    &:hover{
+        background-color:$light;
+        border: 1px solid $main_purple;
+        color:$main_purple;
+    }
+
+    &_description{
+        margin-top: -20px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $light_grey;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 480px){
+    .hero {
+        padding-top: 40px;
+        padding-bottom: 424px;
+
+        &_slogan_title{
+            font-size: 48px;
+        }
+        &_slogan_subtitle{
+            width: 298px;
+            height: 52px;
+            font-size: 18px;
+        }
+        &_slogan_version {
+            width: 267px;
+            height: 15px;
+            font-size: 14px;
+        }
+    }
+
+    .btn_download{
+        font-size: 16px;
+        bottom: 26px;
+        padding: 12px 37px;
+       text-align: center;
+
+       &__description{
+           margin-top: -12px;
+       }
+       
+    }
+    
+
+}

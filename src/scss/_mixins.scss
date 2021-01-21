@@ -10,3 +10,10 @@
   color: $main_purple;
   background: #ffffff;
 }
+
+
+@mixin container_1200 {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;    
+ }

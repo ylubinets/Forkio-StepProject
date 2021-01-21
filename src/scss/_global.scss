@@ -1,0 +1,15 @@
+body {
+    font-family: $Monserrat;
+    overflow-x: hidden;
+}
+
+
+//Button
+
+.btn {
+    display: inline-block;
+    color:$light;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: 0.5s ease-in-out;
+}
