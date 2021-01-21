@@ -1,5 +1,5 @@
 body {
-    font-family: $Monserrat;
+    @include Montserrat;
     overflow-x: hidden;
 }
 
@@ -8,7 +8,7 @@ body {
 
 .btn {
     display: inline-block;
-    color:$light;
+    color: $light;
     text-decoration: none;
     border-radius: 40px;
     transition: 0.5s ease-in-out;

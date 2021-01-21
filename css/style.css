@@ -41,6 +41,20 @@ a {
   color: inherit;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.btn {
+  display: inline-block;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 40px;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -225,7 +239,7 @@ a {
   }
   .navbar_link {
     display: inline-block;
-    padding-top: 28px;
+    padding-top: 11pxpx;
     padding-left: 36px;
     color: #FFFFFF;
     font-size: 27px;
@@ -393,6 +407,7 @@ a {
   }
   .hero_slogan_title {
     font-size: 48px;
+    padding-bottom: 20px;
   }
   .hero_slogan_subtitle {
     width: 298px;
@@ -403,6 +418,7 @@ a {
     width: 267px;
     height: 15px;
     font-size: 14px;
+    padding-top: 20px;
   }
   .btn_download {
     font-size: 16px;

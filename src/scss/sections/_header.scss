@@ -171,7 +171,7 @@
 
         &_link{
             display: inline-block;
-            padding-top: 28px;
+            padding-top: 11pxpx;
             padding-left: 36px;
             color:$light;
             font-size: 27px;
@@ -328,6 +328,7 @@
 
         &_slogan_title{
             font-size: 48px;
+            padding-bottom: 20px;
         }
         &_slogan_subtitle{
             width: 298px;
@@ -338,6 +339,7 @@
             width: 267px;
             height: 15px;
             font-size: 14px;
+            padding-top: 20px;
         }
     }
 
