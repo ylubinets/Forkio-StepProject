@@ -29,5 +29,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
 }
