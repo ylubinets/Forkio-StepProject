@@ -20,9 +20,7 @@
     flex: 0 0 26%;
 
     &_img{
-      display: flex;
-      align-items:center;
-      justify-content: center;
+      @include flex(flex, nowrap, center , center);
       height: 65px;
       margin-bottom: 30px;
     }
