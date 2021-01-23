@@ -122,6 +122,7 @@
 @media only screen and (max-width: 992px) and (min-width: 481px){
     .navbar {
         padding: 22px 0 55px 0;
+        background-color: #27262a;
 
         &_list {
              position: absolute;
@@ -151,16 +152,18 @@
 
     .navbar{
         position: relative;
+       background-color: #27262a;
 
-        &_container{
-            width: 66vw;
-        }
+
+
 
         &_list{
-            display: block;
+            display: flex;
+            flex-direction: column;
             position: absolute;
-            top:102px;
-            right: 2px;
+            top:204px;
+            right: 10px;
+            width: 90%;
 
             &_active{
                 display: none;
@@ -169,15 +172,15 @@
 
         &_link{
             display: inline-block;
-            padding-top: 11px;
-            padding-left: 36px;
+            padding-top: 34px;
+            padding-left: 40px;
             color:$light;
             font-size: 27px;
             font-weight: 300;
-            border-bottom: 1px solid gray;
-            width: 254px;
-            height: 55px;
-            background-color:black;
+            border-bottom: 1px solid #3B3B3B;
+            width: 293px;
+            height: 96px;
+            background-color:#333333;
         
             &:hover {
                 color:$main_purple;
@@ -211,7 +214,7 @@
         align-items:center;
         justify-content: center;
         flex-direction: column;
-       
+       margin-left: 33px;
         
 
     
