@@ -1,8 +1,13 @@
-.feedback {
+
+.bg_section{
   background: url("../img/people-talk/background.png") no-repeat center;
   background-size:cover;
+}
+
+.feedback {
   padding-top: 98px;
   padding-bottom: 30px;
+  margin: 0 auto;
 
   &_title{
     color:$light;
@@ -82,11 +87,6 @@
 }
 
 @media only screen and (max-width: 480px){
-  .bg_section {
-    background: url("../img/people-talk/background.png") no-repeat center;
-    width: 100%;
-  }
-
   .feedback {
 
     &::after{
@@ -119,6 +119,4 @@
       display: none;
     }
   }
-
-
 }
