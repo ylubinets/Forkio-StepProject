@@ -1,9 +1,12 @@
 .pricing {
-  background: url(../img/pricing/background.png);
+
+  background-image: url(../img/pricing/background.png);
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 12px;
+  background-position: top;
+  padding-top: 80px;
   padding-bottom: 12px;
+  margin-top: -18px;
 
   &__title {
     color: $light;
