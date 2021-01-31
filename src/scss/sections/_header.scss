@@ -1,13 +1,12 @@
 //Navbar
 
-
-.container {
-    @include container_1200;
-}
-
 .navbar {
     background-color: #000000;
     padding: 29.5px 0;
+
+    .container {
+        @include container_1200;
+    }
 
     &_container{
         display: flex;
@@ -124,6 +123,10 @@
         padding: 22px 0 55px 0;
         background-color: #27262a;
 
+        .container{
+            @include container_992;
+        }
+
         &_list {
              position: absolute;
              right: -30px;
@@ -138,10 +141,6 @@
 }
 
 @media only screen and (max-width: 480px){
-    .container {
-        max-width: 300px;
-    }
-
     .logo {
         width: 43px;
         height: 41px;
@@ -154,7 +153,9 @@
         position: relative;
        background-color: #27262a;
 
-
+        .container{
+            @include container_480;
+        }
 
 
         &_list{
