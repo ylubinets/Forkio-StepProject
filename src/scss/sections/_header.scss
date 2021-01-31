@@ -1,12 +1,12 @@
 //Navbar
 
+.container {
+    @include container_1200;
+}
+
 .navbar {
     background-color: #000000;
     padding: 29.5px 0;
-
-    .container {
-        @include container_1200;
-    }
 
     &_container{
         display: flex;
@@ -52,8 +52,7 @@
     }
 }
 
-
-//Logo 
+//Logo
 
 .logo_wrapper{
     display: flex;
@@ -119,13 +118,12 @@
 //Media
 
 @media only screen and (max-width: 992px) and (min-width: 481px){
+    .container{
+        @include container_992;
+    }
     .navbar {
         padding: 22px 0 55px 0;
         background-color: #27262a;
-
-        .container{
-            @include container_992;
-        }
 
         &_list {
              position: absolute;
@@ -136,11 +134,14 @@
         &_item{
             margin-right: 7vw;
         }
-        
+
     }
 }
 
 @media only screen and (max-width: 480px){
+    .container{
+        @include container_480;
+    }
     .logo {
         width: 43px;
         height: 41px;
@@ -148,15 +149,17 @@
             display: none;
         }
     }
-
+    .logo_wrapper {
+        display: flex;
+        justify-content: center;
+    }
     .navbar{
         position: relative;
        background-color: #27262a;
 
-        .container{
-            @include container_480;
+        &_container {
+            margin-left: 25px;
         }
-
 
         &_list{
             display: flex;
@@ -170,7 +173,6 @@
                 display: none;
             }
         }
-
         &_link{
             display: inline-block;
             padding-top: 34px;
@@ -182,7 +184,7 @@
             width: 293px;
             height: 96px;
             background-color:#333333;
-        
+
             &:hover {
                 color:$main_purple;
             }
@@ -204,10 +206,10 @@
              width: 8px;
              background-color: $main_purple;
         }
-        
+
         }
-        
-        
+
+
     }
 
     .burger_toggle{
@@ -216,9 +218,9 @@
         justify-content: center;
         flex-direction: column;
        margin-left: 33px;
-        
 
-    
+
+
         &.open .line1{
             transform: rotate(45deg) translate(4px , 9px);
             width: 26px;
@@ -229,8 +231,8 @@
             transform: rotate(-45deg) translate(7px, -9px);
             transition: 300ms ease-in-out;
 
-        }  
-        
+        }
+
         &.open .line2{
             transform: translateX(-50px);
             background:transparent;
@@ -300,7 +302,7 @@
     border: 1px solid $main_purple;
     bottom: 36px;
     padding: 23px 63px;
-    font-size: 21px; 
+    font-size: 21px;
     font-weight: 700;
     color:$light;
     border-radius: 50px;
@@ -354,8 +356,8 @@
        &__description{
            margin-top: -12px;
        }
-       
+
     }
-    
+
 
 }
