@@ -27,6 +27,7 @@
   color: $light;
   background-color: rgba(255, 255, 255, 0.11);
   @include flex(flex, nowrap, space-between, center);
+  max-width: 257px;
   height: 457px;
   margin-bottom: 18px;
   flex-direction: column;
@@ -87,6 +88,7 @@
 
 .item-price--active {
   height: 560px;
+  max-width: 299px;
   flex-basis: 100%;
   background-color: rgba(70, 48, 72, .84);
 
@@ -132,7 +134,7 @@
 
   .item-price--active{
     flex-basis: 40%;
-    margin-left: -12px;
+    margin-left: 12px;
   }
 }
 @media (min-width: 993px) {
