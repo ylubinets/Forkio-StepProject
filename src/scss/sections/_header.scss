@@ -1,25 +1,23 @@
 //Navbar
 
 .container {
-    @include container_1200;
+    @include container_1200 ;
 }
 
 .navbar {
     background-color: #000000;
     padding: 29.5px 0;
+    min-width: 320px;
+
 
     &_container{
-        display: flex;
-        justify-content: space-between;
-        align-items:center;
-        flex-wrap: wrap;
+        @include flex (flex, wrap, space-between,center );
 
     }
 
     &_list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(flex, nowrap, center, center);
+
     }
 
     &_item {
@@ -45,9 +43,9 @@
         border: 1px solid $main_purple;
 
         &:hover{
-            background:$light;
+            @include hoverButton;
             border: 1px solid $main_purple;
-            color: $main_purple;
+
         }
     }
 }
@@ -55,24 +53,20 @@
 //Logo
 
 .logo_wrapper{
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    @include flex(flex, wrap, space-between,center);
+
 }
 
 .logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(flex, nowrap, space-between,center);
     text-decoration: none;
     width: 164px;
 
     &_img {
         background-image: url(../img/logo/logo.png);
-      width: 43px ;
-      height: 41px;
-      transition: 300ms ease-in-out;
+        width: 43px ;
+        height: 41px;
+        transition: 300ms ease-in-out;
       &:hover {
           background-image: url(../img/logo/logo-hover.png);
       }
@@ -104,7 +98,7 @@
     width: 26px;
     border-radius:5px;
     margin-bottom: 7px;
-   background-color : $light;
+    background-color : $light;
 }
 
 .line1{
@@ -116,6 +110,14 @@
 
 
 //Media
+
+@media only screen and (max-width: 520px) and (min-width: 481px){
+    .navbar {
+        &_link {
+            font-size: 14px;
+        }
+    }
+}
 
 @media only screen and (max-width: 992px) and (min-width: 481px){
     .container{
@@ -133,7 +135,7 @@
         }
         &_item{
             margin-right: 7vw;
-        }
+    }
 
     }
 }
@@ -155,13 +157,10 @@
     }
     .navbar{
         position: relative;
-       background-color: #27262a;
-
-        &_container {
-            margin-left: 25px;
-        }
+        background-color: #27262a;
 
         &_list{
+
             display: flex;
             flex-direction: column;
             position: absolute;
@@ -213,14 +212,10 @@
     }
 
     .burger_toggle{
-        display: flex;
-        align-items:center;
-        justify-content: center;
+        @include flex(flex, nowrap, center, center);
         flex-direction: column;
-       margin-left: 33px;
-
-
-
+        margin-left: 33px;
+       
         &.open .line1{
             transform: rotate(45deg) translate(4px , 9px);
             width: 26px;
@@ -253,9 +248,7 @@
     padding-bottom: 487px;
 
     &_slogan{
-        display: flex;
-        justify-content: center;
-        align-items:center;
+        @include flex(flex, nowrap, center, center );
         flex-direction: column;
 
         &_title{
@@ -288,11 +281,9 @@
 }
 
 .btn_section{
+    @include flex(flex, nowrap, center, center);
     max-width: 913px;
     margin: 0 auto;
-    display: flex;
-    align-items:center;
-    justify-content: center;
     flex-direction: column;
 }
 
@@ -309,9 +300,9 @@
     transition: 300ms ease-in-out;
 
     &:hover{
-        background-color:$light;
+        @include hoverButton;
         border: 1px solid $main_purple;
-        color:$main_purple;
+
     }
 
     &_description{
@@ -351,7 +342,7 @@
         font-size: 16px;
         bottom: 26px;
         padding: 12px 37px;
-       text-align: center;
+        text-align: center;
 
        &__description{
            margin-top: -12px;

@@ -25,9 +25,7 @@
     flex: 0 0 26%;
 
     &_img{
-      display: flex;
-      align-items:center;
-      justify-content: center;
+      @include flex(flex, nowrap, center , center);
       height: 65px;
       margin-bottom: 30px;
     }
@@ -36,8 +34,9 @@
       font-style: italic;
       font-weight: 700;
       text-align: center;
-      font-size: 14px;
+      font-size: 16px;
       color:$light;
+      line-height: 24px;
     }
   }
 
