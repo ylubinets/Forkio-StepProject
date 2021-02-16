@@ -78,8 +78,10 @@
   }
 }
 @media screen and (min-width: 993px) {
-  .container {
-    @include container_1200;
+  .editor-section{
+    .container {
+      @include container_1200;
+    }
   }
 }
 @media screen and (min-width: 993px) {
@@ -92,6 +94,10 @@
   .editor-section {
     padding: 120px 0 98px 0;
     background-color: #ffffff;
+
+    .container{
+      @include container_992;
+    }
 
     .editor__title {
       font-size: 42px;
@@ -106,6 +112,10 @@
 @media (max-width: 480px) {
   .editor-section {
     padding: 70px 0 88px 0;
+
+    .container{
+      @include container_480;
+    }
 
     .editor__title {
       font-size: 26px;

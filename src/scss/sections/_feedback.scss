@@ -5,6 +5,10 @@
   padding-bottom: 30px;
   margin: 0 auto;
 
+  .container{
+    @include container_1200;
+  }
+
   &_title{
     color:$light;
     text-align: center;
@@ -67,6 +71,10 @@
 @media only screen and (max-width: 992px) and (min-width: 481px){
   .feedback {
 
+    .container{
+      @include container_992;
+    }
+
     &_text::after{
       width: 100%;
       left: 0;
@@ -83,6 +91,10 @@
 
 @media only screen and (max-width: 480px){
   .feedback {
+
+    .container{
+      @include container_480;
+    }
 
     &::after{
       content:" ";

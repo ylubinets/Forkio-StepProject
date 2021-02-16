@@ -1,6 +1,5 @@
 //Navbar
 
-
 .container {
     @include container_1200 ;
 }
@@ -51,8 +50,7 @@
     }
 }
 
-
-//Logo 
+//Logo
 
 .logo_wrapper{
     @include flex(flex, wrap, space-between,center);
@@ -122,6 +120,9 @@
 }
 
 @media only screen and (max-width: 992px) and (min-width: 481px){
+    .container{
+        @include container_992;
+    }
     .navbar {
         padding: 22px 0 55px 0;
         background-color: #27262a;
@@ -134,17 +135,15 @@
         }
         &_item{
             margin-right: 7vw;
-        
     }
 
     }
 }
 
 @media only screen and (max-width: 480px){
-    .container {
-        max-width: 300px;
+    .container{
+        @include container_480;
     }
-
     .logo {
         width: 43px;
         height: 41px;
@@ -152,7 +151,10 @@
             display: none;
         }
     }
-
+    .logo_wrapper {
+        display: flex;
+        justify-content: center;
+    }
     .navbar{
         position: relative;
         background-color: #27262a;
@@ -170,7 +172,6 @@
                 display: none;
             }
         }
-
         &_link{
             display: inline-block;
             padding-top: 34px;
@@ -182,7 +183,7 @@
             width: 293px;
             height: 96px;
             background-color:#333333;
-        
+
             &:hover {
                 color:$main_purple;
             }
@@ -204,19 +205,17 @@
              width: 8px;
              background-color: $main_purple;
         }
-        
+
         }
-        
-        
+
+
     }
 
     .burger_toggle{
         @include flex(flex, nowrap, center, center);
         flex-direction: column;
         margin-left: 33px;
-        
-
-    
+       
         &.open .line1{
             transform: rotate(45deg) translate(4px , 9px);
             width: 26px;
@@ -227,8 +226,8 @@
             transform: rotate(-45deg) translate(7px, -9px);
             transition: 300ms ease-in-out;
 
-        }  
-        
+        }
+
         &.open .line2{
             transform: translateX(-50px);
             background:transparent;
@@ -294,7 +293,7 @@
     border: 1px solid $main_purple;
     bottom: 36px;
     padding: 23px 63px;
-    font-size: 21px; 
+    font-size: 21px;
     font-weight: 700;
     color:$light;
     border-radius: 50px;
@@ -348,8 +347,8 @@
        &__description{
            margin-top: -12px;
        }
-       
+
     }
-    
+
 
 }
