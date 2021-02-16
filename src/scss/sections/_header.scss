@@ -8,6 +8,8 @@
 .navbar {
     background-color: #000000;
     padding: 29.5px 0;
+    min-width: 320px;
+
 
     &_container{
         @include flex (flex, wrap, space-between,center );
@@ -111,6 +113,14 @@
 
 //Media
 
+@media only screen and (max-width: 520px) and (min-width: 481px){
+    .navbar {
+        &_link {
+            font-size: 14px;
+        }
+    }
+}
+
 @media only screen and (max-width: 992px) and (min-width: 481px){
     .navbar {
         padding: 22px 0 55px 0;
@@ -124,8 +134,9 @@
         }
         &_item{
             margin-right: 7vw;
-        }
         
+    }
+
     }
 }
 
