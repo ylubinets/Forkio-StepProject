@@ -12,9 +12,19 @@
 }
 @mixin container_1200 {
   max-width: 1180px;
+  min-width: 993px;
   margin: 0 auto;
-  padding: 0 10px;    
  }
+@mixin container_992 {
+  max-width: 992px;
+  min-width: 481px;
+  margin: 0 auto;
+}
+@mixin container_480 {
+  max-width: 480px;
+  min-width: 320px;
+  margin: 0 auto;
+}
 @mixin flex($display, $wrap, $justify, $align) {
   display: $display;
   flex-wrap: $wrap;
