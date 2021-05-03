@@ -1,356 +1,359 @@
 //Navbar
 
 .container {
-    @include container_1200 ;
+  @include container_1200 ;
 }
 
 .navbar {
-    background-color: #000000;
-    padding: 29.5px 0;
-    min-width: 320px;
+  background-color: #000000;
+  padding: 29.5px 0;
+  min-width: 320px;
 
 
-    &_container{
-        @include flex (flex, wrap, space-between,center );
+  &_container {
+    @include flex(flex, wrap, space-between, center);
+
+  }
+
+  &_list {
+    @include flex(flex, nowrap, center, center);
+
+  }
+
+  &_item {
+    margin-right: 4vw;
+  }
+
+  &_link {
+    font-size: 16px;
+    color: $main_purple;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 300ms ease-in-out;
+
+    &:hover {
+      color: $light;
+    }
+  }
+
+  &_btn {
+    background: $main_purple;
+    font-weight: 700;
+    padding: 10px 33px;
+    border: 1px solid $main_purple;
+
+    &:hover {
+      @include hoverButton;
+      border: 1px solid $main_purple;
 
     }
-
-    &_list {
-        @include flex(flex, nowrap, center, center);
-
-    }
-
-    &_item {
-        margin-right: 4vw;
-    }
-
-    &_link {
-        font-size: 16px;
-        color:$main_purple;
-        text-decoration: none;
-        font-weight: 700;
-        transition: 300ms ease-in-out;
-
-        &:hover{
-            color:$light;
-        }
-    }
-
-    &_btn {
-        background:$main_purple;
-        font-weight: 700;
-        padding: 10px 33px;
-        border: 1px solid $main_purple;
-
-        &:hover{
-            @include hoverButton;
-            border: 1px solid $main_purple;
-
-        }
-    }
+  }
 }
 
 //Logo
 
-.logo_wrapper{
-    @include flex(flex, wrap, space-between,center);
+.logo_wrapper {
+  @include flex(flex, wrap, space-between, center);
 
 }
 
 .logo {
-    @include flex(flex, nowrap, space-between,center);
-    text-decoration: none;
-    width: 164px;
+  @include flex(flex, nowrap, space-between, center);
+  text-decoration: none;
+  width: 164px;
 
-    &_img {
+  &_img {
 
-        background-image: url(../img/logo/Logo.png);
-      width: 43px ;
-      height: 41px;
-      transition: 300ms ease-in-out;
+    background-image: url(../img/logo/Logo.png);
+    width: 43px;
+    height: 41px;
+    transition: 300ms ease-in-out;
 
-      &:hover {
-          background-image: url(../img/logo/logo-hover.png);
-      }
+    &:hover {
+      background-image: url(../img/logo/logo-hover.png);
     }
+  }
 
-    &_text {
-        @include Montserrat;
-        font-size: 24px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $main_purple;
-        transition: 300ms ease-in-out;
+  &_text {
+    @include Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $main_purple;
+    transition: 300ms ease-in-out;
 
-        &:hover {
-            color: $light;
-        }
+    &:hover {
+      color: $light;
     }
+  }
 }
 
 
 // Burger menu
 
 .burger_toggle {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
-.burger_icon{
-    height: 3px;
-    width: 26px;
-    border-radius:5px;
-    margin-bottom: 7px;
-    background-color : $light;
+.burger_icon {
+  height: 3px;
+  width: 26px;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  background-color: $light;
 }
 
-.line1{
-    width: 20px;
-    position: relative;
-    right: -2px;
+.line1 {
+  width: 20px;
+  position: relative;
+  right: -2px;
 }
-
 
 
 //Media
 
-@media only screen and (max-width: 520px) and (min-width: 481px){
-    .navbar {
-        &_link {
-            font-size: 14px;
-        }
+@media only screen and (max-width: 520px) and (min-width: 481px) {
+  .navbar {
+    &_link {
+      font-size: 14px;
     }
+  }
 }
 
-@media only screen and (max-width: 992px) and (min-width: 481px){
-    .container{
-        @include container_992;
-    }
-    .navbar {
-        padding: 22px 0 55px 0;
-        background-color: #27262a;
+@media only screen and (max-width: 992px) and (min-width: 481px) {
+  .container {
+    @include container_992;
+  }
+  .navbar {
+    padding: 22px 0 55px 0;
+    background-color: #27262a;
 
-        &_list {
-             position: absolute;
-             right: -30px;
-             top: 82px;
-             left: 0;
-        }
-        &_item{
-            margin-right: 7vw;
+    &_list {
+      position: absolute;
+      right: -30px;
+      top: 82px;
+      left: 0;
     }
 
+    &_item {
+      margin-right: 7vw;
     }
+
+  }
 }
 
-@media only screen and (max-width: 480px){
-    .container{
-        @include container_480;
+@media only screen and (max-width: 480px) {
+  .container {
+    @include container_480;
+  }
+  .logo {
+    width: 43px;
+    height: 41px;
+
+    &_text {
+      display: none;
     }
-    .logo {
-        width: 43px;
-        height: 41px;
-        &_text {
-            display: none;
-        }
-    }
-    .logo_wrapper {
-        display: flex;
-        justify-content: center;
-    }
-    .navbar{
-        position: relative;
-        background-color: #27262a;
+  }
+  .logo_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .navbar {
+    position: relative;
+    background-color: #27262a;
 
-        &_list{
+    &_list {
 
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top:100px;
-            right: 10px;
-            width: 90%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100px;
+      right: 10px;
+      width: 90%;
 
-            &_active{
-                display: none;
-            }
-        }
-        &_link{
-            display: inline-block;
-            padding-top: 34px;
-            padding-left: 40px;
-            color:$light;
-            font-size: 27px;
-            font-weight: 300;
-            border-bottom: 1px solid #3B3B3B;
-            width: 293px;
-            height: 96px;
-            background-color:#333333;
-
-            &:hover {
-                color:$main_purple;
-            }
-        }
-
-        &_item{
-            position: relative;
-        &:hover{
-            color:$main_purple;
-        }
-
-        &:hover::before,
-        &:active::before{
-             content: '';
-             display: block;
-             top: 14px;
-             position: absolute;
-             height: 54px;
-             width: 8px;
-             background-color: $main_purple;
-        }
-
-        }
-
-
+      &_active {
+        display: none;
+      }
     }
 
-    .burger_toggle{
-        @include flex(flex, nowrap, center, center);
-        flex-direction: column;
-        margin-left: 33px;
-       
-        &.open .line1{
-            transform: rotate(45deg) translate(4px , 9px);
-            width: 26px;
-            transition: 300ms ease-in-out;
-        }
+    &_link {
+      display: inline-block;
+      padding-top: 34px;
+      padding-left: 40px;
+      color: $light;
+      font-size: 27px;
+      font-weight: 300;
+      border-bottom: 1px solid #3B3B3B;
+      width: 293px;
+      height: 96px;
+      background-color: #333333;
 
-        &.open .line3 {
-            transform: rotate(-45deg) translate(7px, -9px);
-            transition: 300ms ease-in-out;
-
-        }
-
-        &.open .line2{
-            transform: translateX(-50px);
-            background:transparent;
-            box-sizing: none;
-
-        }
+      &:hover {
+        color: $main_purple;
+      }
     }
+
+    &_item {
+      position: relative;
+
+      &:hover {
+        color: $main_purple;
+      }
+
+      &:hover::before,
+      &:active::before {
+        content: '';
+        display: block;
+        top: 14px;
+        position: absolute;
+        height: 54px;
+        width: 8px;
+        background-color: $main_purple;
+      }
+
+    }
+
+
+  }
+
+  .burger_toggle {
+    @include flex(flex, nowrap, center, center);
+    flex-direction: column;
+    margin-left: 33px;
+
+    &.open .line1 {
+      transform: rotate(45deg) translate(4px, 9px);
+      width: 26px;
+      transition: 300ms ease-in-out;
+    }
+
+    &.open .line3 {
+      transform: rotate(-45deg) translate(7px, -9px);
+      transition: 300ms ease-in-out;
+
+    }
+
+    &.open .line2 {
+      transform: translateX(-50px);
+      background: transparent;
+      box-sizing: none;
+
+    }
+  }
 }
-
 
 
 // HERO
 
 .hero {
-    background:url(../img/header/background.png) no-repeat center;
-    background-size:cover;
-    padding-top: 68px;
-    padding-bottom: 487px;
+  background: url(../img/header/background.png) no-repeat center;
+  background-size: cover;
+  padding-top: 68px;
+  padding-bottom: 487px;
 
-    &_slogan{
-        @include flex(flex, nowrap, center, center );
-        flex-direction: column;
-
-        &_title{
-            text-align: center;
-            @include Montserrat;
-            font-size: 82px;
-            font-weight: 700;
-            color:$light;
-        }
-        &_subtitle{
-            @include Lato;
-            color:$main_purple;
-            padding: 19px 0;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        &_version {
-            @include Montserrat;
-            font-size: 14px;
-            text-align: center;
-            text-transform: uppercase;
-            color:$light_grey;
-        }
-    }
-}
-
-.hero_btn{
-    padding-bottom: 70px;
-}
-
-.btn_section{
+  &_slogan {
     @include flex(flex, nowrap, center, center);
-    max-width: 913px;
-    margin: 0 auto;
     flex-direction: column;
+
+    &_title {
+      text-align: center;
+      @include Montserrat;
+      font-size: 82px;
+      font-weight: 700;
+      color: $light;
+    }
+
+    &_subtitle {
+      @include Lato;
+      color: $main_purple;
+      padding: 19px 0;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    &_version {
+      @include Montserrat;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $light_grey;
+    }
+  }
 }
 
-.btn_download{
-    position: relative;
-    background-color:$main_purple;
+.hero_btn {
+  padding-bottom: 70px;
+}
+
+.btn_section {
+  @include flex(flex, nowrap, center, center);
+  max-width: 913px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.btn_download {
+  position: relative;
+  background-color: $main_purple;
+  border: 1px solid $main_purple;
+  bottom: 36px;
+  padding: 23px 63px;
+  font-size: 21px;
+  font-weight: 700;
+  color: $light;
+  border-radius: 50px;
+  transition: 300ms ease-in-out;
+
+  &:hover {
+    @include hoverButton;
     border: 1px solid $main_purple;
-    bottom: 36px;
-    padding: 23px 63px;
-    font-size: 21px;
-    font-weight: 700;
-    color:$light;
-    border-radius: 50px;
-    transition: 300ms ease-in-out;
 
-    &:hover{
-        @include hoverButton;
-        border: 1px solid $main_purple;
+  }
 
-    }
-
-    &_description{
-        margin-top: -20px;
-        font-size: 14px;
-        font-weight: 400;
-        color: $light_grey;
-    }
+  &_description {
+    margin-top: -20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $light_grey;
+  }
 }
 
 
+@media only screen and (max-width: 480px) {
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 424px;
 
-
-@media only screen and (max-width: 480px){
-    .hero {
-        padding-top: 40px;
-        padding-bottom: 424px;
-
-        &_slogan_title{
-            font-size: 48px;
-            padding-bottom: 20px;
-        }
-        &_slogan_subtitle{
-            width: 298px;
-            height: 52px;
-            font-size: 18px;
-        }
-        &_slogan_version {
-            width: 267px;
-            height: 15px;
-            font-size: 14px;
-            padding-top: 20px;
-        }
+    &_slogan_title {
+      font-size: 48px;
+      padding-bottom: 20px;
     }
 
-    .btn_download{
-        font-size: 16px;
-        bottom: 26px;
-        padding: 12px 37px;
-        text-align: center;
-
-       &__description{
-           margin-top: -12px;
-       }
-
+    &_slogan_subtitle {
+      width: 298px;
+      height: 52px;
+      font-size: 18px;
     }
+
+    &_slogan_version {
+      width: 267px;
+      height: 15px;
+      font-size: 14px;
+      padding-top: 20px;
+    }
+  }
+
+  .btn_download {
+    font-size: 16px;
+    bottom: 26px;
+    padding: 12px 37px;
+    text-align: center;
+
+    &__description {
+      margin-top: -12px;
+    }
+
+  }
 
 
 }
