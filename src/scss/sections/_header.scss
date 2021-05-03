@@ -156,12 +156,15 @@
   }
   .logo_wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   .navbar {
     position: relative;
     background-color: #27262a;
 
+    &_container {
+      padding-right: 20px;
+    }
     &_list {
 
       display: flex;
@@ -219,7 +222,7 @@
   .burger_toggle {
     @include flex(flex, nowrap, center, center);
     flex-direction: column;
-    margin-left: 33px;
+    margin-left: 43px;
 
     &.open .line1 {
       transform: rotate(45deg) translate(4px, 9px);
